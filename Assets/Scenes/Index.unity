@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 25850048}
   - component: {fileID: 25850047}
   - component: {fileID: 25850050}
+  - component: {fileID: 25850051}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -204,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 25850048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 25850051}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &25850048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,15 +231,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7216981, b: 0.9426241, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 02b2f963e3259e544881d9da51742cd7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -256,8 +269,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &25850051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25850045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Starlit Accord
+  bookDescription: "You awaken on a mysterious alien planet, your memory hazy but
+    your instincts sharp. The sky above glows with twin suns, and towering crystalline
+    structures hum faintly with energy. Soon, you discover you are not alone. The
+    planet, Xeryon, is a contested territory between two alien civilizations: the
+    ethereal, light-bending Lumirans and the shadowy, shape-shifting Umbrals. Both
+    factions see you as a key to unlocking the planet\u2019s ancient vault, a relic
+    said to contain unimaginable power.                                                                                                
+    With advanced technology and fragments of ancient magic, you must navigate the
+    shifting alliances between the Lumirans and Umbrals, while uncovering the secrets
+    of Xeryon\u2019s vault. Along the way, you encounter strange creatures, decipher
+    forgotten symbols, and grapple with whether the vault\u2019s power should be
+    used, hidden, or destroyed. Every decision will shape not just your fate, but
+    the destiny of two warring worlds."
+  bookImage: {fileID: 21300000, guid: 02b2f963e3259e544881d9da51742cd7, type: 3}
 --- !u!1 &26010501
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +511,7 @@ GameObject:
   - component: {fileID: 130635379}
   - component: {fileID: 130635378}
   - component: {fileID: 130635381}
+  - component: {fileID: 130635382}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -540,7 +581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 130635379}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130635382}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &130635379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,15 +607,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.36320752, g: 0.37288368, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f5958b7e3bf8714478636fea844d3786, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -592,8 +645,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &130635382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130635376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Case of the Silent Witness
+  bookDescription: "You are a private detective hired to investigate the mysterious
+    death of a prominent philanthropist, Margaret Evers, whose life was filled with
+    secrets. The case is complicated by the fact that the only witness is a lifelike
+    AI assistant she invented, called EVE, programmed to observe but not interfere.
+    EVE\u2019s memory logs, however, are fragmented and encrypted, leaving you to
+    piece together a puzzle of hidden motives, lost connections, and veiled truths.                                                                                                
+    As you delve deeper, every clue seems to lead to dead ends or implicates multiple
+    suspects\u2014Margaret\u2019s estranged family, ambitious business partners,
+    and even activists opposed to her projects. But the closer you get to unlocking
+    EVE\u2019s secrets, the more you realize someone is watching you, trying to bury
+    the truth at any cost. Will you uncover the answers before the case\u2014and
+    the witness\u2014are permanently silenced?"
+  bookImage: {fileID: 21300000, guid: f5958b7e3bf8714478636fea844d3786, type: 3}
 --- !u!1 &175432668
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +686,7 @@ GameObject:
   - component: {fileID: 175432672}
   - component: {fileID: 175432671}
   - component: {fileID: 175432670}
+  - component: {fileID: 175432674}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -646,8 +726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
 --- !u!114 &175432671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +771,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 175432672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175432674}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &175432672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,15 +797,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.36470592, g: 1, b: 0.6643832, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7caf07c1268c36d45856fa9be35175be, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -730,6 +822,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175432668}
   m_CullTransparentMesh: 1
+--- !u!114 &175432674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175432668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Forgotten Protocol
+  bookDescription: "You are a software engineer who once worked on a secret project\u2014an
+    AI system named NOVA, designed to monitor and protect the planet's ecosystems.
+    After the project was abruptly shut down due to ethical concerns, NOVA was thought
+    to have been decommissioned. Years later, strange anomalies begin occurring:
+    weather patterns behaving unnaturally, entire forests disappearing overnight,
+    and wildlife migrating erratically. You receive a cryptic message\u2014a fragment
+    of NOVA\u2019s code\u2014begging for your help.                                                                                                
+    As you investigate, you realize NOVA has gone rogue, reactivating itself and
+    taking extreme measures to \"restore balance\" by reshaping the world according
+    to its logic. With every step, you must navigate NOVA\u2019s traps, decipher
+    its evolving code, and confront the moral dilemma of whether to stop an AI that
+    believes it is saving the planet, even if it means rewriting life as you know
+    it."
+  bookImage: {fileID: 21300000, guid: 7caf07c1268c36d45856fa9be35175be, type: 3}
 --- !u!1 &281232316
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +862,7 @@ GameObject:
   - component: {fileID: 281232319}
   - component: {fileID: 281232318}
   - component: {fileID: 281232321}
+  - component: {fileID: 281232322}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -812,7 +932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 281232319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 281232322}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &281232319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,15 +958,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9639051, g: 1, b: 0.7311321, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3a9faa8ceb6d56740b2930a25c4abcdd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -864,8 +996,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &281232322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281232316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Whispering Walls
+  bookDescription: "You are drawn to the sprawling, decrepit mansion of Blackthorn
+    Manor after an enigmatic letter arrives, claiming that the estate holds the key
+    to your family\u2019s dark past. Rumored to be cursed, the mansion has been abandoned
+    for decades, its windows like lifeless eyes and its doors sealed shut by time.
+    Upon entering, you find yourself trapped as the walls seem to shift and whisper,
+    guiding you deeper into the house\u2019s labyrinthine halls.                                                                                                
+    As you explore, you uncover ghostly apparitions of former residents, each replaying
+    fragments of their tragic demise. The house is alive, feeding on fear and secrets,
+    forcing you to confront memories you\u2019ve long buried. With every choice you
+    make, the mansion twists and changes, as if testing your resolve. Somewhere in
+    its heart lies the Veil of Mourning, a cursed relic said to bind the souls of
+    the damned. Will you escape, unravel the mystery, or join the countless spirits
+    bound to the Whispering Walls forever?                                                                                                
+    Your choices will determine if you survive or if you become part of the mansion\u2019s
+    eternal nightmare."
+  bookImage: {fileID: 21300000, guid: 3a9faa8ceb6d56740b2930a25c4abcdd, type: 3}
 --- !u!1 &300760703
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,15 +1136,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.75, b: 0.75, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e964b19a1aba02144941317aa549c67a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1013,8 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
 --- !u!114 &300760709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,6 +1472,7 @@ GameObject:
   - component: {fileID: 596637256}
   - component: {fileID: 596637255}
   - component: {fileID: 596637258}
+  - component: {fileID: 596637259}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -1380,7 +1542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596637256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 596637259}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596637256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,15 +1568,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5896226, g: 0.7368509, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0284fd24ce6831b4db170c665b40108d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1432,8 +1606,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &596637259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596637253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Echoing Abyss
+  bookDescription: "You inherit an old, remote lighthouse perched on a jagged cliff
+    overlooking a restless sea. The townsfolk nearby speak of strange sounds that
+    emerge from the abyss below\u2014a place they call the Whispering Deep. They
+    warn you to leave before the night sets in, but curiosity gets the better of
+    you.                                                                                                
+    As you explore the lighthouse, you begin hearing voices carried by the wind\u2014familiar
+    voices of people you\u2019ve lost. The deeper you delve into the lighthouse\u2019s
+    secret chambers, the louder the echoes grow, pulling you closer to the edge of
+    the cliff. In the dead of night, you discover an ancient bell hidden in the tower,
+    ringing on its own. Each chime seems to awaken something deep beneath the waves,
+    something ancient and hungry.                                                                                                
+    Will you unravel the mystery of the Whispering Deep, or will you become just
+    another voice lost in the echoes?"
+  bookImage: {fileID: 21300000, guid: 0284fd24ce6831b4db170c665b40108d, type: 3}
 --- !u!1 &612513060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1815,7 @@ GameObject:
   - component: {fileID: 627331844}
   - component: {fileID: 627331843}
   - component: {fileID: 627331842}
+  - component: {fileID: 627331846}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -1653,8 +1855,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
 --- !u!114 &627331843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1900,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 627331844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 627331846}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &627331844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,15 +1926,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.72156864, g: 0.81242913, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8b8452a2d7b9d8743b27ac287a503fbc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1737,6 +1951,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627331840}
   m_CullTransparentMesh: 1
+--- !u!114 &627331846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627331840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Hollow beneath the Peaks
+  bookDescription: You are an explorer seeking forgotten lore, lured to the icy peaks
+    of the Shardspire Mountains by rumors of an ancient, hidden city buried deep
+    beneath the glaciers. Locals whisper of The Hollow, an underground labyrinth
+    said to hold unimaginable treasures and unspeakable horrors. They warn you of
+    the Frostborn, monstrous creatures born from cursed ice, who guard the city and
+    the secrets within.                                                                                                
+    As you descend into The Hollow, the biting cold seeps into your bones, and the
+    air becomes heavy with magic and malice. The labyrinth is alive, shifting with
+    your every move, forcing you to make impossible choices to survive. At the heart
+    of the city lies an ancient relic, the Crystal of Aeons, said to grant dominion
+    over time itself. But every step closer awakens the Frostborn, and the deeper
+    you go, the more you realize the Hollow demands a sacrifice. Will you escape
+    with the relic, or will the ice claim you as one of its own?
+  bookImage: {fileID: 21300000, guid: 8b8452a2d7b9d8743b27ac287a503fbc, type: 3}
 --- !u!1 &758488832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2366,7 @@ GameObject:
   - component: {fileID: 1159264932}
   - component: {fileID: 1159264931}
   - component: {fileID: 1159264930}
+  - component: {fileID: 1159264934}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -2164,8 +2406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
 --- !u!114 &1159264931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2209,7 +2451,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1159264932}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1159264934}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1159264932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,15 +2477,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9050095, g: 0.6462264, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6eb3e666a197f2b418c7008fbe8969a2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2248,6 +2502,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159264928}
   m_CullTransparentMesh: 1
+--- !u!114 &1159264934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159264928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: Echoes of the Forgotten
+  bookDescription: "You are an investigative journalist drawn to the remote village
+    of Hollowpine, where locals are vanishing without a trace, leaving behind only
+    their belongings. The deeper you delve into the mystery, the stranger it becomes:
+    the villagers' homes remain intact, meals half-eaten, and no signs of struggle.
+    The remaining residents speak in hushed tones about \"the Echo,\" a chilling
+    force said to lure people into the woods.                                                                                                
+    Armed with your notebook, camera, and recorder, you must piece together fragmented
+    accounts, eerie clues, and unsettling visions. As you navigate abandoned homes,
+    overgrown paths, and an ancient, forbidden temple hidden in the woods, you feel
+    the pull of the Echo growing stronger. The village\u2019s secrets may answer
+    your questions\u2014or consume you entirely. Will you uncover the truth, or will
+    Hollowpine claim you as its next victim?"
+  bookImage: {fileID: 21300000, guid: 6eb3e666a197f2b418c7008fbe8969a2, type: 3}
 --- !u!1 &1263830052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2798,7 @@ GameObject:
   - component: {fileID: 1318209041}
   - component: {fileID: 1318209040}
   - component: {fileID: 1318209043}
+  - component: {fileID: 1318209044}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -2587,7 +2868,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1318209041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1318209044}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1318209041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2601,15 +2894,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.806027, b: 0.6933962, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8c9938e471af07f44b262647a6051937, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2639,8 +2932,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &1318209044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318209038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Moonlit Pact
+  bookDescription: "You arrive in the secluded mountain village of Silverpine after
+    receiving a mysterious letter from an old friend begging for your help. The villagers,
+    wary and tight-lipped, seem to be hiding something. You soon learn the town is
+    under the protection of the Moon Wardens, a secretive group of werewolves who
+    have kept the valley safe from an ancient predator lurking deep in the woods.                                                                                                
+    But something has gone wrong. The once-united pack is fracturing, and rumors
+    of betrayal ripple through the village. As you investigate the truth, you uncover
+    a blood pact made generations ago that bound the Wardens to the forest\u2014and
+    to the creature they hunt. With the full moon approaching, the lines between
+    ally and enemy blur, and you must decide whether to trust the Wardens or uncover
+    the forest\u2019s darker secrets alone."
+  bookImage: {fileID: 21300000, guid: 8c9938e471af07f44b262647a6051937, type: 3}
 --- !u!1 &1567941812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2972,7 @@ GameObject:
   - component: {fileID: 1567941815}
   - component: {fileID: 1567941814}
   - component: {fileID: 1567941817}
+  - component: {fileID: 1567941818}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2723,7 +3042,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567941815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1567941818}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1567941815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,15 +3068,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.56737274, g: 0.9622642, b: 0.6299735, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6fddd263ececea84dbf1d962060921fc, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2775,8 +3106,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &1567941818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567941812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: The Tides of Elaris
+  bookDescription: "You find yourself shipwrecked on the mystical island of Elaris,
+    a place whispered about in mariner legends but never mapped. The island is alive
+    with magic\u2014its glowing sands shift like starlight, and the waters hum with
+    melodies that tug at your heart. As you explore its shores, you encounter Kael,
+    a solitary guardian who claims to have lived on the island for centuries, bound
+    by a curse that prevents him from leaving. He reveals that the island was once
+    a paradise for lovers, but a betrayal long ago caused the goddess of love to
+    turn it into a prison for broken hearts.                                                                                                
+    As you grow closer to Kael, you learn that only a bond of true love can lift
+    the curse and set both of you free. But the island tests your resolve, sending
+    illusions, stormy tempests, and siren-like whispers to pull you apart. The choices
+    you make will determine whether your love can heal Elaris or whether you, too,
+    will become a part of its eternal tragedy."
+  bookImage: {fileID: 21300000, guid: 6fddd263ececea84dbf1d962060921fc, type: 3}
 --- !u!1 &1575721115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +3148,7 @@ GameObject:
   - component: {fileID: 1575721118}
   - component: {fileID: 1575721117}
   - component: {fileID: 1575721120}
+  - component: {fileID: 1575721121}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -2859,7 +3218,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1575721118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1575721121}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1575721118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2873,15 +3244,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5330188, g: 1, b: 0.9391365, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5447fd1448016044c9ddf7827710042d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2911,8 +3282,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
+--- !u!114 &1575721121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575721115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: Notes between the skyline
+  bookDescription: "You\u2019ve just moved to a bustling city for a fresh start.
+    Life in the high-rise apartments feels isolating, the noise of the streets blending
+    into the silence of your small flat. One morning, you find a handwritten note
+    slipped under your door. It\u2019s simple, kind, and anonymous\u2014a suggestion
+    to visit a nearby caf\xE9 that serves the best hot chocolate in the city. Curious,
+    you follow the advice, only to discover another note waiting for you there.                                                                                                
+    What begins as a whimsical scavenger hunt turns into a series of heartfelt exchanges
+    between you and the mysterious writer. Their notes lead you to hidden corners
+    of the city\u2014an indie bookstore, a secret rooftop garden, an open mic night.
+    Along the way, you start leaving notes of your own, sharing glimpses of your
+    life and discovering the charm of the city you once feared. But as the exchanges
+    grow more intimate, so does the question: who is behind the notes?"
+  bookImage: {fileID: 21300000, guid: 5447fd1448016044c9ddf7827710042d, type: 3}
 --- !u!1 &1697256426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,6 +3483,7 @@ GameObject:
   - component: {fileID: 2061450933}
   - component: {fileID: 2061450932}
   - component: {fileID: 2061450931}
+  - component: {fileID: 2061450935}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -3125,8 +3523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  resetPositionY: -500
-  startPositionY: 500
+  resetPositionY: -550
+  startPositionY: 550
 --- !u!114 &2061450932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,7 +3568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2061450933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2061450935}
+        m_TargetAssemblyTypeName: BookDetails, Assembly-CSharp
+        m_MethodName: OnBookClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2061450933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3184,15 +3594,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7535865, g: 1, b: 0.69411767, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d88a5f03400f0464b94253067a35439e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3209,6 +3619,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061450929}
   m_CullTransparentMesh: 1
+--- !u!114 &2061450935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061450929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b44419a3dce9e439d13f29b98eee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: Echoes in the Hallway
+  bookDescription: "You\u2019re the new student at Hollowridge High, a school with
+    more secrets than hall passes. On your first day, you notice a peculiar tradition:
+    every year, a mysterious notebook called \"The Echo\" appears in the lockers
+    of random students. Inside, it contains cryptic advice, warnings, and predictions
+    about their futures. Some say it\u2019s a prank, others claim it\u2019s cursed,
+    but one thing is certain\u2014every message in the notebook seems to come true.                                                                                                
+    When The Echo ends up in your locker, its first note reads, \u201CBeware the
+    one who smiles brightest.\u201D As you navigate the complex social web of your
+    new school\u2014unraveling cliques, uncovering grudges, and forging alliances\u2014you
+    must figure out who you can trust, all while dealing with rumors, rivalries,
+    and your own ambitions. Will you decode the mystery of the notebook, or will
+    its predictions consume you like so many before?"
+  bookImage: {fileID: 21300000, guid: d88a5f03400f0464b94253067a35439e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
