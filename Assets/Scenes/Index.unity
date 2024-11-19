@@ -158,9 +158,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 66}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -343, y: 88}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25850047
 MonoBehaviour:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02b2f963e3259e544881d9da51742cd7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ac4152a66208a8448e906610ca93964, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -298,6 +298,7 @@ MonoBehaviour:
     used, hidden, or destroyed. Every decision will shape not just your fate, but
     the destiny of two warring worlds."
   bookImage: {fileID: 21300000, guid: 02b2f963e3259e544881d9da51742cd7, type: 3}
+  bookIndex: 5
 --- !u!1 &26010501
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a850e08f23fa324fa265de50c3f049b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -390,7 +391,7 @@ GameObject:
   - component: {fileID: 92457619}
   - component: {fileID: 92457618}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 92457619}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 577959362}
+        m_TargetAssemblyTypeName: IndexManager, Assembly-CSharp
+        m_MethodName: ExitView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &92457619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,10 +546,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: -92}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: -106, y: -60}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130635378
 MonoBehaviour:
@@ -614,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f5958b7e3bf8714478636fea844d3786, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b22c53a42e762c4ba81c441d0acf2c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -673,6 +686,7 @@ MonoBehaviour:
     the truth at any cost. Will you uncover the answers before the case\u2014and
     the witness\u2014are permanently silenced?"
   bookImage: {fileID: 21300000, guid: f5958b7e3bf8714478636fea844d3786, type: 3}
+  bookIndex: 8
 --- !u!1 &175432668
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,10 +722,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: -391}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: -106, y: -386}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175432670
 MonoBehaviour:
@@ -804,7 +818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7caf07c1268c36d45856fa9be35175be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 125a8e73122e3da41ac89c35289d3a56, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -849,6 +863,7 @@ MonoBehaviour:
     believes it is saving the planet, even if it means rewriting life as you know
     it."
   bookImage: {fileID: 21300000, guid: 7caf07c1268c36d45856fa9be35175be, type: 3}
+  bookIndex: 9
 --- !u!1 &281232316
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,9 +900,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: -98}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -573, y: -60}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281232318
 MonoBehaviour:
@@ -965,7 +980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a9faa8ceb6d56740b2930a25c4abcdd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7c0088856a657b419dd1b117549adff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1027,6 +1042,7 @@ MonoBehaviour:
     Your choices will determine if you survive or if you become part of the mansion\u2019s
     eternal nightmare."
   bookImage: {fileID: 21300000, guid: 3a9faa8ceb6d56740b2930a25c4abcdd, type: 3}
+  bookIndex: 2
 --- !u!1 &300760703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,9 +1079,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: 204}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -573, y: 266}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300760705
 MonoBehaviour:
@@ -1143,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e964b19a1aba02144941317aa549c67a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e50e4a4eed2c6b645a14b6d3c6bea5f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1204,6 +1220,7 @@ MonoBehaviour:
     choice brings you closer to your destiny\u2014or your doom.                                                                                                
     The fate of Grimore Hollow and the truth about who you are rests in your hands."
   bookImage: {fileID: 21300000, guid: e964b19a1aba02144941317aa549c67a, type: 3}
+  bookIndex: 1
 --- !u!1 &322520253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,8 +1359,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279111182
-  m_fontColor: {r: 0.05660379, g: 0.055802792, b: 0.055802792, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1459,6 +1476,7 @@ MonoBehaviour:
   bookTitle: {fileID: 758488834}
   bookDescription: {fileID: 477383724}
   bookImage: {fileID: 612513062}
+  bookCount: 0
 --- !u!1 &596637253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,10 +1512,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 158, y: 370}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: 129, y: 411}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596637255
 MonoBehaviour:
@@ -1575,7 +1593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0284fd24ce6831b4db170c665b40108d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41bee4366ec37b34bb5181071f6d5e35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1635,6 +1653,7 @@ MonoBehaviour:
     Will you unravel the mystery of the Whispering Deep, or will you become just
     another voice lost in the echoes?"
   bookImage: {fileID: 21300000, guid: 0284fd24ce6831b4db170c665b40108d, type: 3}
+  bookIndex: 10
 --- !u!1 &612513060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,8 +1688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -0.000011444}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 0.000015259, y: -0.0000076293945}
+  m_SizeDelta: {x: 500, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612513062
 MonoBehaviour:
@@ -1685,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6179246, b: 0.6179246, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1838,9 +1857,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -233}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -343, y: -248}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627331842
 MonoBehaviour:
@@ -1933,7 +1952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b8452a2d7b9d8743b27ac287a503fbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7130282366e08c418460559cd4ab5b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1978,6 +1997,7 @@ MonoBehaviour:
     you go, the more you realize the Hollow demands a sacrifice. Will you escape
     with the relic, or will the ice claim you as one of its own?
   bookImage: {fileID: 21300000, guid: 8b8452a2d7b9d8743b27ac287a503fbc, type: 3}
+  bookIndex: 6
 --- !u!1 &758488832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,8 +2066,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279111182
-  m_fontColor: {r: 0.05660379, g: 0.055802792, b: 0.055802792, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2344,6 +2364,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1821678945}
   - {fileID: 1877008505}
   - {fileID: 1697256427}
   m_Father: {fileID: 0}
@@ -2389,9 +2410,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -389, y: -396}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -573, y: -386}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159264930
 MonoBehaviour:
@@ -2484,7 +2505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6eb3e666a197f2b418c7008fbe8969a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2bf7f6afa2e4614685e3daa4300c274, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2528,6 +2549,7 @@ MonoBehaviour:
     your questions\u2014or consume you entirely. Will you uncover the truth, or will
     Hollowpine claim you as its next victim?"
   bookImage: {fileID: 21300000, guid: 6eb3e666a197f2b418c7008fbe8969a2, type: 3}
+  bookIndex: 3
 --- !u!1 &1263830052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2563,7 @@ GameObject:
   - component: {fileID: 1263830055}
   - component: {fileID: 1263830054}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2820,10 +2842,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 158, y: 65}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: 129, y: 88}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318209040
 MonoBehaviour:
@@ -2901,7 +2923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c9938e471af07f44b262647a6051937, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cceba31d806137f43a7fe02f1e926ca6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2959,6 +2981,7 @@ MonoBehaviour:
     ally and enemy blur, and you must decide whether to trust the Wardens or uncover
     the forest\u2019s darker secrets alone."
   bookImage: {fileID: 21300000, guid: 8c9938e471af07f44b262647a6051937, type: 3}
+  bookIndex: 11
 --- !u!1 &1567941812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,9 +3018,9 @@ RectTransform:
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 365}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -343, y: 411}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567941814
 MonoBehaviour:
@@ -3075,7 +3098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6fddd263ececea84dbf1d962060921fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba37cc51c7d0526488c60c227f7399b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3135,6 +3158,7 @@ MonoBehaviour:
     you make will determine whether your love can heal Elaris or whether you, too,
     will become a part of its eternal tragedy."
   bookImage: {fileID: 21300000, guid: 6fddd263ececea84dbf1d962060921fc, type: 3}
+  bookIndex: 4
 --- !u!1 &1575721115
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,10 +3194,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: 211}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: -106, y: 266}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575721117
 MonoBehaviour:
@@ -3251,7 +3275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5447fd1448016044c9ddf7827710042d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 029ccaaa3c001704bb202924ff268553, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3310,6 +3334,7 @@ MonoBehaviour:
     life and discovering the charm of the city you once feared. But as the exchanges
     grow more intimate, so does the question: who is behind the notes?"
   bookImage: {fileID: 21300000, guid: 5447fd1448016044c9ddf7827710042d, type: 3}
+  bookIndex: 7
 --- !u!1 &1697256426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,6 +3372,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1821678944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821678945}
+  - component: {fileID: 1821678947}
+  - component: {fileID: 1821678946}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1821678945
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821678944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006144867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1821678946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821678944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d50b4bd2499d4e74085befb86b1cf1d8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1821678947
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821678944}
+  m_CullTransparentMesh: 1
 --- !u!1 &1877008504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,10 +3605,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1877008505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 158, y: -234}
-  m_SizeDelta: {x: 160, y: 190.4021}
+  m_AnchoredPosition: {x: 129, y: -248}
+  m_SizeDelta: {x: 60, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061450931
 MonoBehaviour:
@@ -3601,7 +3701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d88a5f03400f0464b94253067a35439e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7241f58224cdb1247b4934191d04ec74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3645,6 +3745,7 @@ MonoBehaviour:
     and your own ambitions. Will you decode the mystery of the notebook, or will
     its predictions consume you like so many before?"
   bookImage: {fileID: 21300000, guid: d88a5f03400f0464b94253067a35439e, type: 3}
+  bookIndex: 12
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

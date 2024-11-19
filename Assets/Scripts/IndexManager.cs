@@ -16,6 +16,8 @@ public class IndexManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bookTitle;
     [SerializeField] private TextMeshProUGUI bookDescription;
     [SerializeField] private Image bookImage;
+
+    [SerializeField] private int bookCount;
     void Start()
     {
         
@@ -27,12 +29,14 @@ public class IndexManager : MonoBehaviour
         
     }
 
-    public void ShowBookDetails(string title, string description, Sprite image)
+    public void ShowBookDetails(string title, string description, Sprite image, int bookIndex)
     {
         // Update the book details UI elements
         bookTitle.text = title;
         bookDescription.text = description;
         bookImage.sprite = image;
+        bookCount = bookIndex;
+        Debug.Log(bookCount);
 
         // Disable the "Books" GameObject
         booksParent.SetActive(false);
@@ -40,4 +44,12 @@ public class IndexManager : MonoBehaviour
         // Enable the "Book" GameObject
         bookDetails.SetActive(true);
     }
+
+    public void ExitView()
+    {
+        booksParent.SetActive(true);
+        bookDetails.SetActive(false);
+    }
+
+
 }

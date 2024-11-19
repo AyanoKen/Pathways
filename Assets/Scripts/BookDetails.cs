@@ -9,6 +9,8 @@ public class BookDetails : MonoBehaviour
     public string bookDescription;
     public Sprite bookImage;
 
+    public int bookIndex;
+
     // Reference to the IndexManager in the scene
     private IndexManager indexManager;
 
@@ -24,7 +26,7 @@ public class BookDetails : MonoBehaviour
         if (indexManager != null)
         {
             // Pass the stored data to the IndexManager
-            indexManager.ShowBookDetails(bookTitle, bookDescription, bookImage);
+            indexManager.ShowBookDetails(bookTitle, bookDescription, bookImage, bookIndex);
         }
     }
 }
