@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class IndexManager : MonoBehaviour
@@ -49,6 +50,12 @@ public class IndexManager : MonoBehaviour
     {
         booksParent.SetActive(true);
         bookDetails.SetActive(false);
+    }
+
+    public void StartLevel()
+    {
+        PlayerPrefs.SetInt("SelectedBookIndex", bookCount);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
