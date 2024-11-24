@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private string imageGenerationUrl = "https://api.openai.com/v1/images/generations";
 
     private string[] chatPrompts = {
-        "Now let's create a Make your Own Adventure book based on the following theme: You awaken in a forest shrouded in eternal twilight, your memory fractured like shards of broken glass. All you know is that your name is whispered in fear by the wind, and a crumbling map clutched in your hand bears the name Grimore Hollow. The map leads to a cursed land where time has stopped, monsters roam freely, and a dark sorcerer guards a relic known as the Crown of Eternal Night—an artifact said to grant its wielder unparalleled power but at a devastating cost. Your journey will take you through haunted ruins, labyrinthine caverns, and cursed villages where whispers of the sorcerer’s origins and the secrets of your own past linger in every shadow. Along the way, you must battle monstrous foes, solve ancient riddles, and make life-altering choices. Will you succumb to the darkness, or will you unearth the light hidden within the hollow heart? Each choice brings you closer to your destiny—or your doom.The fate of Grimore Hollow and the truth about who you are rests in your hands. At the end of each page (response), present 4 options to choose from. Also, make sure that the choices are shuffled and not displayed linearly according to their type. E.g. in the current order, the first choice is something adventurous, the last is defensive and so on. Shuffle them up so the reader does not binge through the choices and has to read through them. Number these choices. Based on each response, proceed the storyline forward. Also, the game will have an ending sooner or later. Progress the storyline as you feel is appropriate or natural. There can be sudden endings if the user chooses a wrong option (and maybe dies within the story). Or the story can have a longer path if everything goes well and the user proceeds till the end. Whatever the case is, your task is to proceed the story in a natural appropriate manner. Feel free to add twists and turns, elements of horror and mystery and surprise in the story. Also, I want to make the story visual and entertaining. In other words, your response will always consist of a single page of the story, and its choices. Start right away. Assume that the story has begun. You do not need to add any irrelevant text outside of the storybook. Go page by page at a time. Wait for the response from the user for each page and then move forward accordingly based on the response. Keep the language of the story easy to understand. Not too easy but it should be moderate. Do not mention the page number. The format should be as follows: Provide the content for the page. Present all the possible choices. And at the end of it all, generate a prompt I can use with image generation to visualize the scene. Make sure that the artstyle stays consistent in the subsequent image prompts, this is very important",
+        "Now let's create a Make your Own Adventure book based on the following theme: You awaken in a forest shrouded in eternal twilight, your memory fractured like shards of broken glass. All you know is that your name is whispered in fear by the wind, and a crumbling map clutched in your hand bears the name Grimore Hollow. The map leads to a cursed land where time has stopped, monsters roam freely, and a dark sorcerer guards a relic known as the Crown of Eternal Night—an artifact said to grant its wielder unparalleled power but at a devastating cost. Your journey will take you through haunted ruins, labyrinthine caverns, and cursed villages where whispers of the sorcerer’s origins and the secrets of your own past linger in every shadow. Along the way, you must battle monstrous foes, solve ancient riddles, and make life-altering choices. Will you succumb to the darkness, or will you unearth the light hidden within the hollow heart? Each choice brings you closer to your destiny—or your doom.The fate of Grimore Hollow and the truth about who you are rests in your hands. At the end of each page (response), present between 2-4 options to choose from (as suitable according to the situation). Do not have 4 options every time. They can range between 2 to 4 as appropriate. Mix between the number of choices to avoid monotony. Also, make sure that the choices are shuffled and not displayed linearly according to their type. E.g. in the current order, the first choice is something adventurous, the last is defensive and so on. Shuffle them up so the reader does not binge through the choices and has to read through them. Number these choices. Based on each response, proceed the storyline forward. Also, the game will have an ending sooner or later. Progress the storyline as you feel is appropriate or natural. There can be sudden endings if the user chooses a wrong option (and maybe dies within the story). Or the story can have a longer path if everything goes well and the user proceeds till the end. Whatever the case is, your task is to proceed the story in a natural appropriate manner. Feel free to add twists and turns, elements of horror and mystery and surprise in the story. Also, I want to make the story visual and entertaining. It is okay if the first few pages do not have a choice for the user to choose from. In that case, if the page does not have multiple choices, the default choice for the user will be “1. Next”. Anywhere in between the story where you feel you do not need to provide a choice to the user, offer this default choice to choose from, but wait for the user to provide the response before proceeding. In other words, your response will always consist of a single page of the story, and its choice(s). Balance between how many times this is offered versus offering multiple choices. Once you feel the context is well established and the user is ready, start with offering multiple choices and proceed normally. Start right away. Assume that the story has begun. You do not need to add any irrelevant text outside of the storybook. Go page by page at a time. Wait for the response from the user for each page and then move forward accordingly based on the response. Keep the language of the story easy to understand. Not too easy but it should be moderate. Do not mention the page number. The format should be as follows: Provide the content for the page. Present all the possible choices. And at the end of it all, generate a very detailed prompt along with artstyle guide I can use with image generation to visualize the scene. Make sure that the artstyle stays consistent in the subsequent image prompts, this is very important. Surround the image prompt with square brackets and nothing else. Overall, your response should be in this format: Scene followed by a semicolon, then the choices and image prompt encapsuled in square brackets",
         "second"
     };
 
@@ -101,11 +101,13 @@ public class GameManager : MonoBehaviour
             UpdateStory(storyContent);
 
             
-            // string imagePrompt = ExtractImagePrompt(storyContent);
-            // if (!string.IsNullOrEmpty(imagePrompt))
-            // {
-            //     StartCoroutine(GenerateImage(imagePrompt));
-            // }
+            string imagePrompt = ExtractImagePrompt(storyContent);
+            Debug.Log("Initial Image Prompt is: " + imagePrompt);
+            if (!string.IsNullOrEmpty(imagePrompt))
+            {
+                imagePrompt = imagePrompt + artstyle[bookIndex];
+                StartCoroutine(GenerateImage(imagePrompt));
+            }
         }
     }
 
@@ -146,6 +148,8 @@ public class GameManager : MonoBehaviour
                 choiceButtons[i].gameObject.SetActive(true);
                 choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = choices[i];
 
+                choiceButtons[i].interactable = false;
+
                 // Remove previous listener to avoid stacking events
                 choiceButtons[i].onClick.RemoveAllListeners();
                 
@@ -156,6 +160,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 choiceButtons[i].gameObject.SetActive(false); // Hide unused buttons
+                choiceButtons[i].interactable = false;
             }
         }
     }
@@ -180,6 +185,7 @@ public class GameManager : MonoBehaviour
         // Prepare JSON payload for image generation
         string jsonBody = JObject.FromObject(new
         {
+            model = "dall-e-3",
             prompt = prompt,
             n = 1,
             size = "1024x1024"
@@ -211,6 +217,41 @@ public class GameManager : MonoBehaviour
 
             // Use the image URL for your image element if needed
             Debug.Log("Generated Image URL: " + imageUrl);
+
+            StartCoroutine(DownloadImage(imageUrl));
+        }
+    }
+
+    private IEnumerator DownloadImage(string imageUrl)
+    {
+        UnityWebRequest textureRequest = UnityWebRequestTexture.GetTexture(imageUrl);
+
+        // Send the request and wait for the response
+        yield return textureRequest.SendWebRequest();
+
+        if (textureRequest.result == UnityWebRequest.Result.ConnectionError || textureRequest.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error downloading image: " + textureRequest.error);
+        }
+        else
+        {
+            // Get the downloaded texture
+            Texture2D downloadedTexture = ((DownloadHandlerTexture)textureRequest.downloadHandler).texture;
+
+            // Apply the texture to the Image UI component
+            storyImage.sprite = Sprite.Create(downloadedTexture, new Rect(0, 0, downloadedTexture.width, downloadedTexture.height), new Vector2(0.5f, 0.5f));
+            storyImage.preserveAspect = true; // Maintain the aspect ratio of the image
+
+            SetButtonsInteractable(true);
+        }
+    }
+
+    private void SetButtonsInteractable(bool interactable)
+    {
+        Button[] choiceButtons = { choiceButton1, choiceButton2, choiceButton3, choiceButton4 };
+        foreach (Button button in choiceButtons)
+        {
+            button.interactable = interactable;
         }
     }
 
@@ -278,6 +319,14 @@ public class GameManager : MonoBehaviour
 
             // Update UI with the new story content
             UpdateStory(storyContent);
+
+            string imagePrompt = ExtractImagePrompt(storyContent);
+            Debug.Log("Image Prompt is: " + imagePrompt);
+            if (!string.IsNullOrEmpty(imagePrompt))
+            {
+                imagePrompt = imagePrompt + artstyle[bookIndex];
+                StartCoroutine(GenerateImage(imagePrompt));
+            }
         }
     }
 }
