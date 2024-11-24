@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [Header("API Settings")]
     private int bookIndex;
-    private string apiKey = "";
+    private string apiKey;
     private string chatUrl = "https://api.openai.com/v1/chat/completions";
     private string imageGenerationUrl = "https://api.openai.com/v1/images/generations";
 
@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        apiKey = APIKeyConfig.OpenAIAPIKey;
+
         bookIndex = PlayerPrefs.GetInt("SelectedBookIndex", 1) - 1;
         Debug.Log("Current Selected Book is: " + bookIndex);
 
