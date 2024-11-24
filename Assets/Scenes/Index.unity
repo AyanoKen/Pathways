@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ac4152a66208a8448e906610ca93964, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75bfaa4f6f981dd44b8ec296d6b7b213, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -297,7 +297,7 @@ MonoBehaviour:
     forgotten symbols, and grapple with whether the vault\u2019s power should be
     used, hidden, or destroyed. Every decision will shape not just your fate, but
     the destiny of two warring worlds."
-  bookImage: {fileID: 21300000, guid: 02b2f963e3259e544881d9da51742cd7, type: 3}
+  bookImage: {fileID: 21300000, guid: 75bfaa4f6f981dd44b8ec296d6b7b213, type: 3}
   bookIndex: 5
 --- !u!1 &26010501
 GameObject:
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a850e08f23fa324fa265de50c3f049b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fd1978355879bc4283b707e0263c2d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: -291}
+  m_AnchoredPosition: {x: 23.000011, y: -291}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92457618
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2b22c53a42e762c4ba81c441d0acf2c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 019f0a00085853146adadc2f34e29cb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -685,7 +685,7 @@ MonoBehaviour:
     EVE\u2019s secrets, the more you realize someone is watching you, trying to bury
     the truth at any cost. Will you uncover the answers before the case\u2014and
     the witness\u2014are permanently silenced?"
-  bookImage: {fileID: 21300000, guid: f5958b7e3bf8714478636fea844d3786, type: 3}
+  bookImage: {fileID: 21300000, guid: 019f0a00085853146adadc2f34e29cb6, type: 3}
   bookIndex: 8
 --- !u!1 &175432668
 GameObject:
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 125a8e73122e3da41ac89c35289d3a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73c380a654b1a144098ad69ca4929eac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -862,7 +862,7 @@ MonoBehaviour:
     its evolving code, and confront the moral dilemma of whether to stop an AI that
     believes it is saving the planet, even if it means rewriting life as you know
     it."
-  bookImage: {fileID: 21300000, guid: 7caf07c1268c36d45856fa9be35175be, type: 3}
+  bookImage: {fileID: 21300000, guid: 73c380a654b1a144098ad69ca4929eac, type: 3}
   bookIndex: 9
 --- !u!1 &281232316
 GameObject:
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7c0088856a657b419dd1b117549adff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df25821d0565256469c12599f9b4658e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1041,7 +1041,7 @@ MonoBehaviour:
     bound to the Whispering Walls forever?                                                                                                
     Your choices will determine if you survive or if you become part of the mansion\u2019s
     eternal nightmare."
-  bookImage: {fileID: 21300000, guid: 3a9faa8ceb6d56740b2930a25c4abcdd, type: 3}
+  bookImage: {fileID: 21300000, guid: df25821d0565256469c12599f9b4658e, type: 3}
   bookIndex: 2
 --- !u!1 &300760703
 GameObject:
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e50e4a4eed2c6b645a14b6d3c6bea5f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 136a02d7346b7bc47b4d664c6dad30f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1219,7 +1219,7 @@ MonoBehaviour:
     darkness, or will you unearth the light hidden within the hollow heart? Each
     choice brings you closer to your destiny\u2014or your doom.                                                                                                
     The fate of Grimore Hollow and the truth about who you are rests in your hands."
-  bookImage: {fileID: 21300000, guid: e964b19a1aba02144941317aa549c67a, type: 3}
+  bookImage: {fileID: 21300000, guid: 136a02d7346b7bc47b4d664c6dad30f2, type: 3}
   bookIndex: 1
 --- !u!1 &322520253
 GameObject:
@@ -1323,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000085831, y: 42}
+  m_AnchoredPosition: {x: 23, y: 42}
   m_SizeDelta: {x: 412.9256, y: 259.4591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477383724
@@ -1359,8 +1359,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1593,7 +1593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41bee4366ec37b34bb5181071f6d5e35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baf34a809f4471742a44c507b12ea4f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1652,7 +1652,7 @@ MonoBehaviour:
     something ancient and hungry.                                                                                                
     Will you unravel the mystery of the Whispering Deep, or will you become just
     another voice lost in the echoes?"
-  bookImage: {fileID: 21300000, guid: 0284fd24ce6831b4db170c665b40108d, type: 3}
+  bookImage: {fileID: 21300000, guid: baf34a809f4471742a44c507b12ea4f8, type: 3}
   bookIndex: 10
 --- !u!1 &612513060
 GameObject:
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fb13e06f2d19ffb45963a7f46d0a5028, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1952,7 +1952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7130282366e08c418460559cd4ab5b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 928fa3882a58fb94590b1ac67cb60608, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1996,7 +1996,7 @@ MonoBehaviour:
     over time itself. But every step closer awakens the Frostborn, and the deeper
     you go, the more you realize the Hollow demands a sacrifice. Will you escape
     with the relic, or will the ice claim you as one of its own?
-  bookImage: {fileID: 21300000, guid: 8b8452a2d7b9d8743b27ac287a503fbc, type: 3}
+  bookImage: {fileID: 21300000, guid: 928fa3882a58fb94590b1ac67cb60608, type: 3}
   bookIndex: 6
 --- !u!1 &758488832
 GameObject:
@@ -2032,8 +2032,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 211}
-  m_SizeDelta: {x: 500, y: 34.2271}
+  m_AnchoredPosition: {x: 23, y: 245}
+  m_SizeDelta: {x: 397.8634, y: 39.3339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758488834
 MonoBehaviour:
@@ -2066,8 +2066,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2bf7f6afa2e4614685e3daa4300c274, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d1925eaaa38ea04f9c53d5ab71bb007, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2548,7 +2548,7 @@ MonoBehaviour:
     the pull of the Echo growing stronger. The village\u2019s secrets may answer
     your questions\u2014or consume you entirely. Will you uncover the truth, or will
     Hollowpine claim you as its next victim?"
-  bookImage: {fileID: 21300000, guid: 6eb3e666a197f2b418c7008fbe8969a2, type: 3}
+  bookImage: {fileID: 21300000, guid: 9d1925eaaa38ea04f9c53d5ab71bb007, type: 3}
   bookIndex: 3
 --- !u!1 &1263830052
 GameObject:
@@ -2586,7 +2586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -243}
+  m_AnchoredPosition: {x: 23, y: -249}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263830054
@@ -2935,7 +2935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cceba31d806137f43a7fe02f1e926ca6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 518d23ac5ea8e40469c72be14a269b51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2992,7 +2992,7 @@ MonoBehaviour:
     to the creature they hunt. With the full moon approaching, the lines between
     ally and enemy blur, and you must decide whether to trust the Wardens or uncover
     the forest\u2019s darker secrets alone."
-  bookImage: {fileID: 21300000, guid: 8c9938e471af07f44b262647a6051937, type: 3}
+  bookImage: {fileID: 21300000, guid: 518d23ac5ea8e40469c72be14a269b51, type: 3}
   bookIndex: 11
 --- !u!1 &1567941812
 GameObject:
@@ -3110,7 +3110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba37cc51c7d0526488c60c227f7399b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a31a45600cf962d4ea7eb52a40e0ef5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3169,7 +3169,7 @@ MonoBehaviour:
     illusions, stormy tempests, and siren-like whispers to pull you apart. The choices
     you make will determine whether your love can heal Elaris or whether you, too,
     will become a part of its eternal tragedy."
-  bookImage: {fileID: 21300000, guid: 6fddd263ececea84dbf1d962060921fc, type: 3}
+  bookImage: {fileID: 21300000, guid: a31a45600cf962d4ea7eb52a40e0ef5a, type: 3}
   bookIndex: 4
 --- !u!1 &1575721115
 GameObject:
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 029ccaaa3c001704bb202924ff268553, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f76dacce3b8948d4693dd5a891121d2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3345,7 +3345,7 @@ MonoBehaviour:
     Along the way, you start leaving notes of your own, sharing glimpses of your
     life and discovering the charm of the city you once feared. But as the exchanges
     grow more intimate, so does the question: who is behind the notes?"
-  bookImage: {fileID: 21300000, guid: 5447fd1448016044c9ddf7827710042d, type: 3}
+  bookImage: {fileID: 21300000, guid: f76dacce3b8948d4693dd5a891121d2f, type: 3}
   bookIndex: 7
 --- !u!1 &1697256426
 GameObject:
@@ -3564,7 +3564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fb13e06f2d19ffb45963a7f46d0a5028, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3713,7 +3713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7241f58224cdb1247b4934191d04ec74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 670f1dfa9cfd4774a9096d842bd962a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3756,7 +3756,7 @@ MonoBehaviour:
     must figure out who you can trust, all while dealing with rumors, rivalries,
     and your own ambitions. Will you decode the mystery of the notebook, or will
     its predictions consume you like so many before?"
-  bookImage: {fileID: 21300000, guid: d88a5f03400f0464b94253067a35439e, type: 3}
+  bookImage: {fileID: 21300000, guid: 670f1dfa9cfd4774a9096d842bd962a9, type: 3}
   bookIndex: 12
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
