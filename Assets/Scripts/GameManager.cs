@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [Header("API Settings")]
     private int bookIndex;
-    private string apiKey = "your-api-key"; // Replace with your GPT API key
+    private string apiKey = "";
     private string chatUrl = "https://api.openai.com/v1/chat/completions";
     private string imageGenerationUrl = "https://api.openai.com/v1/images/generations";
 
