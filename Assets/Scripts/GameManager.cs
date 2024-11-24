@@ -34,12 +34,18 @@ public class GameManager : MonoBehaviour
         "second"
     };
 
-    private string[] chatHistory = {};
+    private List<Dictionary<string, string>> chatHistory = new List<Dictionary<string, string>>();
 
     void Start()
     {
         bookIndex = PlayerPrefs.GetInt("SelectedBookIndex", 1) - 1;
         Debug.Log("Current Selected Book is: " + bookIndex);
+
+        chatHistory.Add(new Dictionary<string, string>
+        {
+            { "role", "system" },
+            { "content", chatPrompts[bookIndex] }
+        });
 
         StartCoroutine(FetchStory(chatPrompts[bookIndex]));
     }
@@ -84,6 +90,12 @@ public class GameManager : MonoBehaviour
 
             JObject jsonResponse = JObject.Parse(responseText);
             string storyContent = jsonResponse["choices"][0]["message"]["content"].ToString().Trim();
+
+            chatHistory.Add(new Dictionary<string, string>
+            {
+                { "role", "assistant" },
+                { "content", storyContent }
+            });
 
             // Update UI with story content
             UpdateStory(storyContent);
@@ -133,6 +145,13 @@ public class GameManager : MonoBehaviour
             {
                 choiceButtons[i].gameObject.SetActive(true);
                 choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = choices[i];
+
+                // Remove previous listener to avoid stacking events
+                choiceButtons[i].onClick.RemoveAllListeners();
+                
+                // Assign the HandleChoice method with the choice text
+                string choiceText = choices[i]; // Store the choice text in a local variable to avoid closure issue
+                choiceButtons[i].onClick.AddListener(() => HandleChoice(choiceText));
             }
             else
             {
@@ -192,6 +211,73 @@ public class GameManager : MonoBehaviour
 
             // Use the image URL for your image element if needed
             Debug.Log("Generated Image URL: " + imageUrl);
+        }
+    }
+
+    public void HandleChoice(string choiceText)
+    {
+        // Add the selected choice to chat history as user input
+        chatHistory.Add(new Dictionary<string, string>
+        {
+            { "role", "user" },
+            { "content", choiceText }
+        });
+
+        choiceButton1.gameObject.SetActive(false);
+        choiceButton2.gameObject.SetActive(false);
+        choiceButton3.gameObject.SetActive(false);
+        choiceButton4.gameObject.SetActive(false);
+
+        storyText.text = "Loading the story, please wait!";
+
+        // Fetch the next part of the story
+        StartCoroutine(FetchStoryContinuation());
+    }
+
+    private IEnumerator FetchStoryContinuation()
+    {
+        // Prepare the JSON body using chat history
+        string jsonBody = JObject.FromObject(new
+        {
+            model = "gpt-4",
+            messages = chatHistory.ToArray(),
+            max_tokens = 3000,
+            temperature = 0.7
+        }).ToString();
+
+        // Create a UnityWebRequest with the chat endpoint
+        UnityWebRequest chatRequest = new UnityWebRequest(chatUrl, "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
+        chatRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        chatRequest.downloadHandler = new DownloadHandlerBuffer();
+        chatRequest.SetRequestHeader("Content-Type", "application/json");
+        chatRequest.SetRequestHeader("Authorization", "Bearer " + apiKey);
+
+        // Send the request and wait for the response
+        yield return chatRequest.SendWebRequest();
+
+        if (chatRequest.result == UnityWebRequest.Result.ConnectionError || chatRequest.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + chatRequest.error);
+        }
+        else
+        {
+            // Parse the JSON response
+            string responseText = chatRequest.downloadHandler.text;
+            Debug.Log("Chat Response: " + responseText);
+
+            JObject jsonResponse = JObject.Parse(responseText);
+            string storyContent = jsonResponse["choices"][0]["message"]["content"].ToString().Trim();
+
+            // Update chat history with the assistant's response
+            chatHistory.Add(new Dictionary<string, string>
+            {
+                { "role", "assistant" },
+                { "content", storyContent }
+            });
+
+            // Update UI with the new story content
+            UpdateStory(storyContent);
         }
     }
 }
