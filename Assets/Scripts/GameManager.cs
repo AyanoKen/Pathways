@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
     [Header("API Settings")]
     private int bookIndex;
     private string apiKey;
+    private string imageAPIKey;
     private string chatUrl = "https://api.openai.com/v1/chat/completions";
-    private string imageGenerationUrl = "https://api.openai.com/v1/images/generations";
+    private string imageGenerationUrl = "https://cloud.leonardo.ai/api/rest/v1/generations";
 
     private string[] chatPrompts = {
         "Now let's create a Make your Own Adventure book based on the following theme: You awaken in a forest shrouded in eternal twilight, your memory fractured like shards of broken glass. All you know is that your name is whispered in fear by the wind, and a crumbling map clutched in your hand bears the name Grimore Hollow. The map leads to a cursed land where time has stopped, monsters roam freely, and a dark sorcerer guards a relic known as the Crown of Eternal Night—an artifact said to grant its wielder unparalleled power but at a devastating cost. Your journey will take you through haunted ruins, labyrinthine caverns, and cursed villages where whispers of the sorcerer’s origins and the secrets of your own past linger in every shadow. Along the way, you must battle monstrous foes, solve ancient riddles, and make life-altering choices. Will you succumb to the darkness, or will you unearth the light hidden within the hollow heart? Each choice brings you closer to your destiny—or your doom.The fate of Grimore Hollow and the truth about who you are rests in your hands. At the end of each page (response), present between 2-4 options to choose from (as suitable according to the situation). Do not have 4 options every time. They can range between 2 to 4 as appropriate. Mix between the number of choices to avoid monotony. Also, make sure that the choices are shuffled and not displayed linearly according to their type. E.g. in the current order, the first choice is something adventurous, the last is defensive and so on. Shuffle them up so the reader does not binge through the choices and has to read through them. Number these choices. Based on each response, proceed the storyline forward. Also, the game will have an ending sooner or later. Progress the storyline as you feel is appropriate or natural. There can be sudden endings if the user chooses a wrong option (and maybe dies within the story). Or the story can have a longer path if everything goes well and the user proceeds till the end. Whatever the case is, your task is to proceed the story in a natural appropriate manner. Feel free to add twists and turns, elements of horror and mystery and surprise in the story. Also, I want to make the story visual and entertaining. It is okay if the first few pages do not have a choice for the user to choose from. In that case, if the page does not have multiple choices, the default choice for the user will be “1. Next”. Anywhere in between the story where you feel you do not need to provide a choice to the user, offer this default choice to choose from, but wait for the user to provide the response before proceeding. In other words, your response will always consist of a single page of the story, and its choice(s). Balance between how many times this is offered versus offering multiple choices. Once you feel the context is well established and the user is ready, start with offering multiple choices and proceed normally. Start right away. Assume that the story has begun. You do not need to add any irrelevant text outside of the storybook. Go page by page at a time. Wait for the response from the user for each page and then move forward accordingly based on the response. Keep the language of the story easy to understand. Not too easy but it should be moderate. Do not mention the page number. The format should be as follows: Provide the content for the page. Present all the possible choices. And at the end of it all, generate a very detailed prompt along with artstyle guide I can use with image generation to visualize the scene. Imagine yourself as an artist who just read the story and is describing the scene in high detail. Surround the image prompt with square brackets and nothing else. Overall, your response should be in this format: Scene followed by a semicolon, then the choices and image prompt encapsuled in square brackets",
@@ -59,6 +60,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         apiKey = APIKeyConfig.OpenAIAPIKey;
+
+        imageAPIKey = APIKeyConfig.LeonardoAIAPIKey;
 
         bookIndex = PlayerPrefs.GetInt("SelectedBookIndex", 1) - 1;
         Debug.Log("Current Selected Book is: " + bookIndex);
@@ -127,7 +130,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Initial Image Prompt is: " + imagePrompt);
             if (!string.IsNullOrEmpty(imagePrompt))
             {
-                imagePrompt = imagePrompt + artstyle[bookIndex];
                 StartCoroutine(GenerateImage(imagePrompt));
             }
         }
@@ -207,40 +209,91 @@ public class GameManager : MonoBehaviour
         // Prepare JSON payload for image generation
         string jsonBody = JObject.FromObject(new
         {
-            model = "dall-e-3",
+            modelId = "6b645e3a-d64f-4341-a6d8-7a3690fbf042", // Model ID as per Leonardo API
+            contrast = 3.5,
             prompt = prompt,
-            n = 1,
-            size = "1024x1024"
+            num_images = 1,
+            width = 832,
+            height = 832,
+            alchemy = true,
+            styleUUID = "111dc692-d470-4eec-b791-3475abac4c46",
+            enhancePrompt = true,
+            enhancePromptInstruction = artstyle[bookIndex]
         }).ToString();
 
         // Create a UnityWebRequest with the image generation endpoint
-        UnityWebRequest imageRequest = new UnityWebRequest(imageGenerationUrl, "POST");
+        UnityWebRequest generationRequest = new UnityWebRequest(imageGenerationUrl, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
-        imageRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        imageRequest.downloadHandler = new DownloadHandlerBuffer();
-        imageRequest.SetRequestHeader("Content-Type", "application/json");
-        imageRequest.SetRequestHeader("Authorization", "Bearer " + apiKey);
+        generationRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        generationRequest.downloadHandler = new DownloadHandlerBuffer();
+        generationRequest.SetRequestHeader("Content-Type", "application/json");
+        generationRequest.SetRequestHeader("Authorization", "Bearer " + imageAPIKey);
 
         // Send the request and wait for the response
-        yield return imageRequest.SendWebRequest();
+        yield return generationRequest.SendWebRequest();
 
-        if (imageRequest.result == UnityWebRequest.Result.ConnectionError || imageRequest.result == UnityWebRequest.Result.ProtocolError)
+        if (generationRequest.result == UnityWebRequest.Result.ConnectionError || generationRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError("Error generating image: " + imageRequest.error);
+            Debug.LogError("Error generating image: " + generationRequest.error);
         }
         else
         {
-            // Parse the JSON response
-            string responseText = imageRequest.downloadHandler.text;
-            Debug.Log("Image Response: " + responseText);
+            string responseText = generationRequest.downloadHandler.text;
+            Debug.Log("Image Generation Response: " + responseText);
 
             JObject jsonResponse = JObject.Parse(responseText);
-            string imageUrl = jsonResponse["data"][0]["url"].ToString();
+            string generationId = jsonResponse["sdGenerationJob"]["generationId"].ToString();
 
-            // Use the image URL for your image element if needed
-            Debug.Log("Generated Image URL: " + imageUrl);
+            // Step 2: Poll for the generated image using the generation ID
+            string imageStatusUrl = $"https://cloud.leonardo.ai/api/rest/v1/generations/{generationId}";
+            bool imageGenerated = false;
+            string imageUrl = string.Empty;
 
-            StartCoroutine(DownloadImage(imageUrl));
+            while (!imageGenerated)
+            {
+                UnityWebRequest imageStatusRequest = UnityWebRequest.Get(imageStatusUrl);
+                imageStatusRequest.SetRequestHeader("Authorization", "Bearer " + imageAPIKey);
+                imageStatusRequest.SetRequestHeader("accept", "application/json");
+
+                yield return imageStatusRequest.SendWebRequest();
+
+                if (imageStatusRequest.result == UnityWebRequest.Result.ConnectionError || imageStatusRequest.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError("Error checking image generation status: " + imageStatusRequest.error);
+                    yield break;
+                }
+
+                string statusResponse = imageStatusRequest.downloadHandler.text;
+                JObject statusJsonResponse = JObject.Parse(statusResponse);
+
+                Debug.Log(statusJsonResponse);
+
+                // Access the generated_images array properly
+                if (statusJsonResponse["generations_by_pk"]?["generated_images"] is JArray generatedImages && generatedImages.Count > 0)
+                {
+                    imageUrl = generatedImages[0]?["url"]?.ToString();
+                    if (!string.IsNullOrEmpty(imageUrl))
+                    {
+                        imageGenerated = true;
+                        break;
+                    }
+                }
+
+                // Wait 2 seconds before retrying if the image isn't ready
+                Debug.Log("Image not ready yet, retrying...");
+                yield return new WaitForSeconds(2f);
+            }
+
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                Debug.Log("Generated Image URL: " + imageUrl);
+                // Step 3: Download and apply the generated image
+                StartCoroutine(DownloadImage(imageUrl));
+            }
+            else
+            {
+                Debug.LogError("Failed to retrieve the generated image URL.");
+            }
         }
     }
 
@@ -346,7 +399,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Image Prompt is: " + imagePrompt);
             if (!string.IsNullOrEmpty(imagePrompt))
             {
-                imagePrompt = imagePrompt + artstyle[bookIndex];
                 StartCoroutine(GenerateImage(imagePrompt));
             }
         }
