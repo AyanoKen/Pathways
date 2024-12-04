@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using TMPro;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -301,7 +302,6 @@ public class GameManager : MonoBehaviour
     {
         UnityWebRequest textureRequest = UnityWebRequestTexture.GetTexture(imageUrl);
 
-        // Send the request and wait for the response
         yield return textureRequest.SendWebRequest();
 
         if (textureRequest.result == UnityWebRequest.Result.ConnectionError || textureRequest.result == UnityWebRequest.Result.ProtocolError)
@@ -310,12 +310,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Get the downloaded texture
             Texture2D downloadedTexture = ((DownloadHandlerTexture)textureRequest.downloadHandler).texture;
 
-            // Apply the texture to the Image UI component
             storyImage.sprite = Sprite.Create(downloadedTexture, new Rect(0, 0, downloadedTexture.width, downloadedTexture.height), new Vector2(0.5f, 0.5f));
-            storyImage.preserveAspect = true; // Maintain the aspect ratio of the image
+            storyImage.preserveAspect = true; 
 
             SetButtonsInteractable(true);
         }
@@ -402,5 +400,10 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(GenerateImage(imagePrompt));
             }
         }
+    }
+
+    public void LoadTitle()
+    {
+        SceneManager.LoadScene(0);
     }
 }
